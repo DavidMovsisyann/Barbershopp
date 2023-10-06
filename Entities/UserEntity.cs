@@ -1,4 +1,7 @@
-﻿namespace Barbershopp.Entities
+﻿using Barbershopp.Entities.Helpers;
+using Microsoft.AspNetCore.Identity;
+
+namespace BarberShopp.Entities
 {
     public class UserEntity
     {
@@ -8,5 +11,6 @@
         public string? LastName { get; set; }
         public string? Password { get; set; }
         public string? Email { get; set; }
+        public UserRole userRole { get; set; }
     }
 }

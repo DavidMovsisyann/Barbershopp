@@ -1,8 +1,8 @@
-﻿using Barbershopp.Entities;
-using Barbershopp.Repository_Interfaces;
+﻿using BarberShopp.Entities;
+using BarberShopp.Repository_Interfaces;
 using Microsoft.EntityFrameworkCore;
 
-namespace Barbershopp.Repositories
+namespace BarberShopp.Repositories
 {
     public class BookingHistoryRepository : GenericRepository<BookingHistoryEntity>,IBookingHistoryRepository
     {

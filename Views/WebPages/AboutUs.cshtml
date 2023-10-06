@@ -1,0 +1,239 @@
+﻿@{
+    ViewData["Title"] = "AboutUs";
+}
+<style>
+    .title {
+        background-color: rgba(0, 0, 0, 90%);
+        text-align: center;
+        color: white;
+    }
+
+    body {
+        margin: 0px;
+    }
+
+    .title h1 {
+        margin: 0px;
+    }
+
+        .title h1:hover {
+            color: grey;
+        }
+
+    .map {
+        margin-left: 2%;
+    }
+
+    .info {
+        display: flex;
+    }
+
+    .text_info {
+        margin-left: 50px;
+    }
+
+    .contacts p {
+        font-size: 18px;
+    }
+
+    .menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        background-color: black;
+        height: 7vh;
+    }
+
+    .kub {
+        background-image: url("https://e0.pxfuel.com/wallpapers/583/362/desktop-wallpaper-ugepa-barbershop-578101-rolls-barber.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        height: 120vh;
+        background-attachment: fixed;
+        opacity: 0.8;
+    }
+
+    .white-kub {
+        width: 900px;
+        height: 100px;
+        background-color: white;
+    }
+
+    .reglog {
+        margin: 0;
+        text-decoration: none;
+        color: rgb(249, 180, 4);
+        padding: 0;
+    }
+
+    .reglogg {
+        margin: 0;
+        text-decoration: none;
+        color: rgb(249, 180, 4);
+        padding: 0;
+        margin-right: 5%;
+    }
+
+    .white-kub {
+        width: 30%;
+        height: 100px;
+        background-color: rgba(255, 255, 255, 0);
+        justify-content: center;
+    }
+
+    .white-kub {
+        display: flex;
+    }
+
+    .p-1:hover {
+        color: rgb(249, 180, 4);
+        cursor: pointer;
+    }
+
+    .w-1 {
+        display: flex;
+        justify-content: center;
+    }
+
+    .p-div {
+        display: flex;
+        justify-content: center;
+    }
+
+    .p-2 {
+        color: white;
+        text-align: center;
+        font-family: sans-serif;
+        font-weight: 100;
+        font-size: 50px;
+        margin-top: 20%;
+    }
+
+    .p-4 {
+        color: white;
+        text-align: center;
+        font-family: sans-serif;
+        font-weight: 100;
+        font-size: 25px;
+        margin-top: 20px;
+    }
+
+    ul {
+        list-style: none;
+        display: flex;
+    }
+
+    li {
+        margin: 10px;
+        font-family: sans-serif;
+        font-weight: 100;
+        color: white;
+        font-size: 18px;
+    }
+
+    .info {
+        color: white;
+    }
+
+    a {
+        text-decoration: none;
+        color: black;
+    }
+
+    .maintext {
+        color: rgb(249, 180, 4);
+    }
+
+    .p-div {
+        display: flex;
+        margin-left: 70px;
+    }
+
+    .p-1 {
+        margin: 4px;
+        margin-top: 40px;
+        font-family: sans-serif;
+        font-weight: 100;
+        margin-left: 20px;
+        font-size: large;
+    }
+
+    .adress {
+        margin-top: 0px;
+    }
+
+  
+</style>
+
+<div class="main">
+    <div class="menu">
+        <div class="munu-div">
+            <ul>
+                <li class="white"><i class="fa fa-home" aria-hidden="true"></i></li>
+                <li  class="white">121, King St, VIC 3000, New York.</li>
+                <li class="white"><i class="fa fa-envelope-o" aria-hidden="true"></i> info@example.xcom</li>
+            </ul>
+        </div>
+        <div class="munu-div1">
+            <ul>
+                <li><i class="fa fa-instagram" aria-hidden="true"></i></li>
+                <li><i class="fa fa-twitter" aria-hidden="true"></i></li>
+                <li><i class="fa fa-google-plus" aria-hidden="true"></i></li>
+                <li><i class="fa fa-github" aria-hidden="true"></i></li>
+                <li><i class="fa fa-pinterest" aria-hidden="true"></i></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="kub">
+        <div class="w-1">
+            <div class="white-kub">
+                <div class="p-div">
+                    <a class="p-1 " href="@Url.Action("Home", "Pages")">Home</a>
+                    <a class="p-1 maintext" href="@Url.Action("AboutUs", "Pages")">About Us</a>
+                    <a class="p-1" href="@Url.Action("Barbers", "Pages")">Barbers</a>
+                </div>
+
+            </div>
+        </div>
+        <div class="info">
+            <div class="map">
+                <h2 class="adress">2880 Broadway New York, NY 10025 США</h2>
+                <div class="mapouter">
+                    <div class="gmap_canvas">
+                        <iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=2880%20Broadway,%20New%20York&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://123movies-to.org"></a><br><style>
+                                                                                                                                                                                                                                                                                                         .mapouter {
+                                                                                                                                                                                                                                                                                                             position: relative;
+                                                                                                                                                                                                                                                                                                             text-align: right;
+                                                                                                                                                                                                                                                                                                             height: 500px;
+                                                                                                                                                                                                                                                                                                             width: 600px;
+                                                                                                                                                                                                                                                                                                         }</style><a href="https://www.embedgooglemap.net">html google map</a><style>
+                                                                                                                                                                                                                                                                                                                                                                                  .gmap_canvas {
+                                                                                                                                                                                                                                                                                                                                                                                      overflow: hidden;
+                                                                                                                                                                                                                                                                                                                                                                                      background: none !important;
+                                                                                                                                                                                                                                                                                                                                                                                      height: 500px;
+                                                                                                                                                                                                                                                                                                                                                                                      width: 600px;
+                                                                                                                                                                                                                                                                                                                                                                                  }</style>
+                    </div>
+                </div>
+            </div>
+            <div class="text_info">
+                <div class="contacts">
+                    <h1>CONTACTS</h1>
+                    <p>tel. +3749494940</p>
+                    <p>gmail davitmovs@gmail.com</p>
+                    <p>facebook http/..........</p>
+                    <p>instagram http/.........</p>
+                </div>
+                <div class="text">
+                    <h1>ABOUT US</h1>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets conta</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

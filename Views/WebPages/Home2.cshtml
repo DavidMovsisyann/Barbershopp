@@ -1,0 +1,1004 @@
+﻿
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <style>
+        * {
+            margin: 0;
+        }
+
+        ul {
+            list-style: none;
+            display: flex;
+        }
+
+        li {
+            margin: 10px;
+            font-family: sans-serif;
+            font-weight: 100;
+            color: white;
+            font-size: 18px;
+        }
+
+
+        .menu {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            background-color: black;
+            height: 7vh;
+        }
+
+        ul:hover {
+            cursor: pointer;
+        }
+
+        .white-kub {
+            width: 30%;
+            height: 100px;
+            background-color: rgba(255, 255, 255, 0);
+            justify-content: center;
+        }
+
+        .kub {
+            background-image: url("https://images.fresha.com/locations/location-profile-images/828985/982922/9cf485ce-2d88-4771-aca9-1e3e19fb5e42.jpg?class=gallery-modal-large");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            height: 100vh;
+            background-attachment: fixed;
+        }
+
+        .p-div {
+            display: flex;
+        }
+
+        .p-1 {
+            margin: 5px;
+            margin-top: 40px;
+            font-family: sans-serif;
+            font-weight: 100;
+            margin-left: 20px;
+            font-size: large;
+        }
+
+        .verev {
+            margin-top: 10%;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .button {
+            --color: rgb(249, 180, 4);
+            ;
+            padding: 0.8em 1.7em;
+            background-color: transparent;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transition: .5s;
+            font-weight: 400;
+            font-size: 17px;
+            border: 1px solid;
+            font-family: inherit;
+            text-transform: uppercase;
+            color: var(--color);
+            z-index: 1;
+            margin-top: 25px;
+            margin-left: 50px;
+            font-family: sans-serif;
+            font-weight: 100;
+            ;
+        }
+
+            .button::before, .button::after {
+                content: '';
+                display: block;
+                width: 50px;
+                height: 50px;
+                transform: translate(-50%, -50%);
+                position: absolute;
+                border-radius: 50%;
+                z-index: -1;
+                background-color: var(--color);
+                transition: 1s ease;
+            }
+
+            .button::before {
+                top: -1em;
+                left: -1em;
+            }
+
+            .button::after {
+                left: calc(100% + 1em);
+                top: calc(100% + 1em);
+            }
+
+            .button:hover::before, .button:hover::after {
+                height: 410px;
+                width: 410px;
+            }
+
+            .button:hover {
+                color: white;
+            }
+
+            .button:active {
+                filter: brightness(.8);
+            }
+
+
+        .white-kub {
+            display: flex;
+        }
+
+        .p-1:hover {
+            color: rgb(249, 180, 4);
+            cursor: pointer;
+        }
+
+        .w-1 {
+            display: flex;
+            justify-content: center;
+        }
+
+        span {
+            color: rgb(249, 180, 4);
+            font-weight: normal;
+        }
+
+        .p-2 {
+            color: white;
+            text-align: center;
+            font-family: sans-serif;
+            font-weight: 100;
+            font-size: 50px;
+            margin-top: 20%;
+        }
+
+        .p-4 {
+            color: white;
+            text-align: center;
+            font-family: sans-serif;
+            font-weight: 100;
+            font-size: 25px;
+            margin-top: 20px;
+        }
+
+        .loc {
+            margin: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        input {
+            border: 1px solid #ccc;
+            width: 18%;
+            height: 4vh;
+            margin: 10px;
+        }
+
+        .s-1 {
+            font-weight: 100;
+            font-family: sans-serif;
+        }
+
+
+
+
+        .button-1 {
+            padding: 17px 40px;
+            border: 0;
+            background-color: black;
+            box-shadow: white;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-size: 15px;
+            transition: all .5s ease;
+            color: white;
+            width: 20%;
+        }
+
+            .button-1:hover {
+                letter-spacing: 3px;
+                background-color: rgb(249, 180, 4);
+                ;
+                color: hsl(0, 0%, 100%);
+                box-shadow: rgb(249, 180, 4);
+                ;
+            }
+
+            .button-1:active {
+                letter-spacing: 3px;
+                background-color: rgb(249, 180, 4);
+                ;
+                color: hsl(0, 0%, 100%);
+                box-shadow: rgb(249, 180, 4);
+                ;
+                transform: translateY(10px);
+                transition: 100ms;
+            }
+
+
+
+
+
+        .home {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hh-1 {
+            color: black;
+            font-family: sans-serif;
+            font-size: 30px;
+            margin: 10px;
+        }
+
+        u {
+            text-decoration: none;
+            color: #777777;
+            font-weight: 100;
+        }
+
+        .pp-2 {
+            color: black;
+            font-family: sans-serif;
+            font-size: 30px;
+            margin: 10px;
+            font-weight: 100;
+        }
+
+        .lc {
+            font-size: 30px;
+            margin: 10px;
+            color: rgb(249, 180, 4);
+            ;
+        }
+
+        .txt {
+            display: flex;
+        }
+
+        .ss {
+            margin-top: 17px;
+            font-weight: 100;
+            font-family: sans-serif;
+            color: #777777;
+        }
+
+        .gic {
+            border: 2px solid rgb(249, 180, 4);
+            ;
+            width: 10%;
+            margin: 20px;
+        }
+
+        .lorem {
+            width: 65%;
+            font-family: sans-serif;
+            color: #777777;
+            font-weight: 100;
+            margin: 10px;
+        }
+
+        .home-room {
+            width: 40%;
+            margin-top: 35px;
+        }
+
+        .room {
+            width: 50%;
+            margin-top: 35px;
+        }
+
+        .sale {
+            background-color: rgb(249, 180, 4);
+            width: 20%;
+            height: 4vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+        .hh {
+            color: white;
+            font-family: sans-serif;
+        }
+
+        .gic2 {
+            border: 0.4px solid #ccc;
+            margin-top: 20px;
+        }
+
+
+
+
+        .swiper {
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-slide {
+            background-position: center;
+            background-size: cover;
+        }
+
+            .swiper-slide img {
+                display: block;
+                width: 100%;
+                height: 70vh;
+            }
+
+
+            .swiper-slide:hover {
+                cursor: pointer;
+            }
+
+        .vv {
+            margin-top: 10px;
+        }
+
+        .house {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .house-people1 {
+            background-image: url("https://cutbarbershoppalembang.files.wordpress.com/2016/09/img_9362.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            width: 45vh;
+            height: 38vh;
+            margin: 20px;
+            transition: 1s linear infinite;
+            overflow: hidden;
+        }
+
+
+        .house-people2 {
+            background-image: url("https://images.fresha.com/locations/location-profile-images/359734/307851/c73d5ef0-f45e-449e-8ae1-dd58dd553768.jpg?class=venue-gallery-large&dpr=2");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            width: 45vh;
+            height: 38vh;
+            margin: 20px;
+            transition: 1s;
+            overflow: hidden;
+        }
+
+
+        .house-people3 {
+            background-image: url("https://t4.ftcdn.net/jpg/04/30/15/03/360_F_430150318_I0HvdU5O0JDKVwpCXU3YgGqriZDneFrm.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            width: 45vh;
+            height: 38vh;
+            margin: 20px;
+            overflow: hidden;
+        }
+
+        .house-people1 {
+            transition: 1.1s;
+            animation: 0.7s;
+        }
+
+        .house-people2 {
+            transition: 1.1s;
+            animation: 0.7s;
+        }
+
+
+        .house-people3 {
+            transition: 1.1s;
+            animation: 0.7s;
+        }
+
+        .ff:hover {
+            cursor: pointer;
+        }
+
+        .house-people1:hover {
+            transform: scale(1.05);
+        }
+
+        .house-people2:hover {
+            transform: scale(1.05);
+        }
+
+        .house-people3:hover {
+            transform: scale(1.05);
+        }
+
+
+
+        .dd {
+            display: flex;
+            justify-content: space-around;
+            font-family: sans-serif;
+            font-weight: 100;
+            font-size: 20px;
+        }
+
+
+
+
+        .vi {
+            color: black;
+            font-family: sans-serif;
+            font-size: 30px;
+            margin: 20px;
+        }
+
+        .house-2 {
+            display: flex;
+            justify-content: center;
+        }
+
+
+        .house-people4 {
+            background-image: url("https://d2zdpiztbgorvt.cloudfront.net/region1/us/198150/biz_photo/02bc851238e2496190c39311001446-brad-biz-photo-a8dc505238c248ecaad1a4700e0a70-booksy.jpeg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            width: 45vh;
+            height: 38vh;
+            margin: 20px;
+            overflow: hidden;
+        }
+
+
+        .house-people5 {
+            background-image: url("https://www.yocale.com/_next/image?url=https%3A%2F%2Fyocale-ca.s3.ca-central-1.amazonaws.com%2Fbus-32930%2Fgallery%2Fc0d1ccd9-b240-4840-a750-046a1c0969dc.jpg&w=1280&q=75");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            width: 45vh;
+            height: 38vh;
+            margin: 20px;
+            overflow: hidden;
+        }
+
+
+        .house-people6 {
+            background-image: url("https://districtonebarbershop.com/wp-content/uploads/2022/08/Empty-Row-Wide-Shot-1024x763.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            width: 45vh;
+            height: 38vh;
+            margin: 20px;
+            overflow: hidden;
+        }
+
+        .house-people4 {
+            transition: 1.1s;
+            animation: 0.7s;
+        }
+
+        .house-people5 {
+            transition: 1.1s;
+            animation: 0.7s;
+        }
+
+        .house-people6 {
+            transition: 1.1s;
+            animation: 0.7s;
+        }
+
+        .house-people4:hover {
+            transform: scale(1.05);
+        }
+
+        .house-people5:hover {
+            transform: scale(1.05);
+        }
+
+        .house-people6:hover {
+            transform: scale(1.05);
+        }
+
+
+
+        .button-0 {
+            padding: 1.3em 3em;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            font-weight: 500;
+            color: white;
+            background-color: black;
+            border: none;
+            box-shadow: rgb(249, 180, 4);
+            transition: all 0.3s ease 0s;
+            cursor: pointer;
+            outline: none;
+        }
+
+            .button-0:hover {
+                background-color: rgb(249, 180, 4);
+                box-shadow: rgb(249, 180, 4);
+                color: #fff;
+                transform: translateY(-7px);
+            }
+
+            .button-0:active {
+                transform: translateY(-1px);
+            }
+
+        .div-button {
+            display: flex;
+            justify-content: center;
+            margin-top: 25px;
+        }
+
+
+        .m-1 {
+            color: black;
+            font-size: 15px;
+            font-weight: 100;
+            ;
+            margin: 20px;
+            font-family: sans-serif;
+        }
+
+        .m-2 {
+            color: rgb(249, 180, 4);
+            ;
+            font-family: sans-serif;
+            font-weight: normal;
+            font-size: 30px;
+            margin: 20px;
+        }
+
+        .big-2 {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .img-js {
+            margin: 5px;
+            animation: 1s;
+            transition: 1s;
+            width: 30%;
+        }
+
+        .w22 {
+            margin: 1px;
+            width: 58%;
+            animation: 1s;
+            transition: 1s;
+        }
+
+        .a1 {
+            width: 61%;
+            animation: 1s;
+            transition: 1s;
+        }
+
+            .a1:hover {
+                opacity: 0.7;
+            }
+
+
+        .img-js:hover {
+            opacity: 0.7;
+        }
+
+        .w22:hover {
+            opacity: 0.7;
+        }
+
+        .home-prepare {
+            background-image: url("https://www.salonsdirect.com/blog/wp-content/uploads/2019/01/nathon-oski-EW_rqoSdDes-unsplash-scaled.jpg");
+            background-repeat: no-repeat;
+            box-sizing: cover;
+            background-position: center;
+            height: 70vh;
+            margin-top: 20px;
+            background-attachment: fixed;
+        }
+
+
+        .m-9 {
+            color: white;
+            font-size: 15px;
+            font-weight: 100;
+            ;
+            margin: 20px;
+            font-family: sans-serif;
+            padding: 20px;
+        }
+
+        .m-5 {
+            color: rgb(249, 180, 4);
+            font-size: 30px;
+            font-weight: normal;
+            margin: 20px;
+            font-family: sans-serif;
+            margin-left: 5%;
+        }
+
+        .v-v {
+            display: flex;
+            justify-content: center;
+            margin-top: 12%;
+            color: white;
+            font-family: sans-serif;
+            font-size: 30px;
+            font-weight: 100;
+        }
+
+        .o-1 {
+            color: black;
+            font-size: 20px;
+            font-weight: 10;
+            margin: 20px;
+            font-family: sans-serif;
+            margin-left: 5%;
+        }
+
+        .o-2 {
+            color: rgb(249, 180, 4);
+            font-family: sans-serif;
+            font-size: 30px;
+            font-weight: 100;
+            margin: 20px;
+            margin-left: 5%;
+        }
+
+        .new-store {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .store-2 {
+            margin: 10px;
+        }
+
+
+        .img-i {
+            width: 100%;
+        }
+
+        .i-1 {
+            color: black;
+            font-family: sans-serif;
+            font-weight: 100;
+            font-size: 20px;
+        }
+
+            .i-1:hover {
+                color: rgb(249, 180, 4);
+                ;
+                cursor: pointer;
+            }
+
+
+        .img-i {
+            animation: 1s;
+            transition: 1s;
+            overflow: hidden;
+        }
+
+            .img-i:hover {
+                overflow: hidden;
+                transform: scale(1.04);
+            }
+
+        .peoples {
+            background-image: url("https://img77.uenicdn.com/image/upload/v1526957899/business/barber-shop-gb/93809f47-0d37-430c-8147-f2d9a72091eb.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            height: 60vh;
+            background-attachment: fixed;
+            opacity: 0.9;
+        }
+
+        .t-h {
+            color: black;
+            font-size: 25px;
+            font-family: sans-serif;
+            font-weight: 100;
+            padding: 30px;
+        }
+
+        .tt-h {
+            color: rgb(249, 180, 4);
+            font-size: 35px;
+            font-family: sans-serif;
+            font-weight: 100;
+            margin-left: 4%;
+        }
+
+        .z-z {
+            width: 20%;
+            border-radius: 50%;
+            margin-left: 10%;
+        }
+
+        .l-l {
+            color: white;
+            font-family: sans-serif;
+            font-weight: 100;
+            width: 40%;
+            margin-top: 30px;
+            margin-left: 2%;
+        }
+
+        .people-1 {
+            display: flex;
+            width: 50%;
+        }
+
+        .maintext {
+            color: rgb(249, 180, 4);
+        }
+
+
+        .munu-div li {
+            color: white;
+        }
+
+
+        .people-2 {
+            display: flex;
+            width: 50%;
+        }
+
+        .big-div-people {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .reclame {
+            width: 100%;
+            height: 25vh;
+            text-align: center;
+            align-items: center;
+            margin-top: 7%;
+            opacity: 0.5;
+        }
+
+
+
+
+
+
+
+
+
+        .nerqev {
+            display: flex;
+            justify-content: center;
+        }
+
+
+        .css {
+            text-align: center;
+        }
+
+        .x-1 {
+            width: 100%;
+        }
+
+        .reglog {
+            margin: 0;
+            text-decoration: none;
+            color: rgb(249, 180, 4);
+            padding: 0;
+        }
+
+        .reglogg {
+            margin: 0;
+            text-decoration: none;
+            color: rgb(249, 180, 4);
+            padding: 0;
+            margin-right: 5%;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="big">
+        <div class="menu">
+            <div class="munu-div">
+                <ul>
+                    <li><i class="fa fa-home" aria-hidden="true"></i></li>
+                    <li>121, King St, VIC 3000, New York.
+
+                    </li>
+                    <li><i class="fa fa-envelope-o" aria-hidden="true"></i> info@example.xcom</li>
+                </ul>
+            </div>
+            <div class="munu-div1">
+                <ul>
+                    <li><i class="fa fa-instagram" aria-hidden="true"></i></li>
+                    <li><i class="fa fa-twitter" aria-hidden="true"></i></li>
+                    <li><i class="fa fa-google-plus" aria-hidden="true"></i></li>
+                    <li><i class="fa fa-github" aria-hidden="true"></i></li>
+                    <li><i class="fa fa-pinterest" aria-hidden="true"></i></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="kub">
+            <div class="w-1">
+                <div class="white-kub">
+                    <div class="p-div">
+                        <a class="p-1 maintext" href="@Url.Action("Home", "Pages")">Home</a>
+                        <a class="p-1" href="@Url.Action("AboutUs", "Pages")">About Us</a>
+                        <a class="p-1" href="@Url.Action("Barbers", "Pages")">Barbers</a>
+                    </div>
+
+                </div>
+            </div>
+            <div class="text">
+                <p class="p-2">The Best <span> BarberShop</span>You'll love to visit.</p>
+                <p class="p-4">The best place to glow yourself up</p>
+            </div>
+        </div>
+
+        <div class="home">
+            <div class="home-room">
+                <div class="sale">
+                    <p class="hh">Barber Shop</p>
+                </div>
+                <p class="m-2">Entrust your look to our professionals</p>
+
+                <div class="txt">
+                    <p class="lc"><i class="fa fa-map-marker" aria-hidden="true"></i>
+                    <p class="ss">121, King St, VIC 3000, New York, United States</p></p>
+
+
+                </div>
+                <div class="gic"></div>
+                <p class="lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium unde minus, mollitia ipsam commodi, provident veritatis, quibusdam dolorem neque consectetur non! Repudiandae aut impedit quae illo, veniam non enim perspiciatis.</p>
+
+            </div>
+            <div class="room">
+                <img src="https://nationalbarbers.org/wp-content/uploads/2023/01/beauty-blog-template-1.png" class="x-1">
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+    <div class="dd">
+        <div class="txt-1">
+        </div>
+        <div class="txt-1">
+        </div>
+        <div class="txt-1">
+        </div>
+
+    </div>
+
+
+    <div class="dd">
+        <div class="txt-1">
+        </div>
+        <div class="txt-1">
+        </div>
+        <div class="txt-1">
+        </div>
+
+    </div>
+
+
+
+    <div class="big-2">
+        <div class="css">
+            <div class="verev">
+                <img src="https://media.istockphoto.com/id/1244833615/photo/barbershop-working-place-interior-3d-illustration.jpg?s=612x612&w=0&k=20&c=IcF7m2POk-mjAhQv10z5yVToIVqAm_YEBBRZF3KHiPQ=" class="a1">
+            </div>
+
+            <div class="nerqev">
+                <img src="https://img.freepik.com/premium-photo/barber-tools-wooden-shelf-mirror-barbershop_124865-7127.jpg?w=2000" class="img-js">
+                <img src="https://res.cloudinary.com/spendo-live/image/upload/v1664912549/9bad49c4-1388-4eec-9785-596f35868a42.jpg" class="img-js">
+            </div>
+        </div>
+        <div class="csa">
+            <!-- <img src="https://avatars.mds.yandex.net/get-altay/4587805/2a0000017aec1c559e023ff02bfb7f13b7af/orig" class="w22"> -->
+        </div>
+    </div>
+
+    <div class="div-button">
+        <button class="button-0">
+            Load More
+        </button>
+    </div>
+
+    <div class="home-prepare">
+        <p class="m-9">FIND YOUR HOUSE IN YOUR CITY</p>
+        <div class="m-5">WORK PROCESS</div>
+
+
+        <div class="v-v">
+            <p class="v-c">You Meet our agent and decuse your property Demand</p>
+        </div>
+
+    </div>
+    <div class="q-1">
+        <p class="o-1">ALL ABOUT LATEST STATELY UPDATES</p>
+        <p class="o-2">NEWS & STORIES</p>
+    </div>
+
+    <div class="new-store">
+        <div class="store-2">
+            <img src="https://static.wixstatic.com/media/7549c1_c64cdaec668447bca59bbde27dfd87e6~mv2.jpg/v1/fill/w_640,h_460,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/7549c1_c64cdaec668447bca59bbde27dfd87e6~mv2.jpg" class="img-i">
+
+        </div>
+        <div class="store-2">
+            <img src="https://static.wixstatic.com/media/b47b0e3204d54a93b13108b60de2f04a.jpg/v1/fill/w_640,h_460,fp_0.50_0.50,q_80,usm_0.66_1.00_0.01,enc_auto/b47b0e3204d54a93b13108b60de2f04a.jpg" class="img-i">
+
+        </div>
+        <div class="store-2">
+            <img src="https://i.pinimg.com/originals/26/ed/13/26ed13cbbd905f5479074ab998af6385.jpg" class="img-i">
+
+        </div>
+    </div>
+
+
+    <div class="peoples">
+        <div class="text-txt">
+            <p class="t-h">TESTIMONIALS</p>
+            <p class="tt-h">WHAT CLIENTS SAYS</p>
+        </div>
+
+        <div class="big-div-people">
+            <div class="people-1">
+                <img src="https://img.freepik.com/premium-vector/barbershop-logo-template_59362-50.jpg?w=2000" class="z-z">
+
+                <p class="l-l">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus odio non enim, recusandae neque aperiam vel quo ex unde voluptatum illo quam repudiandae autem alias numquam officia. Quos, maxime architecto.</p>
+
+            </div>
+
+            <div class="people-2">
+                <img src="https://cdn.dribbble.com/users/2002111/screenshots/9131068/1007_4x.jpg" class=z-z>
+
+                <p class="l-l">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus odio non enim, recusandae neque aperiam vel quo ex unde voluptatum illo quam repudiandae autem alias numquam officia. Quos, maxime architecto.</p>
+
+            </div>
+
+
+        </div>
+
+
+
+
+    </div>
+
+
+    </div>
+
+</body>
+</html>

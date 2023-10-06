@@ -1,8 +1,8 @@
-﻿using Barbershopp.Entities;
-using Barbershopp.Repository_Interfaces;
+﻿using BarberShopp.Repository_Interfaces;
+using BarberShopp.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace Barbershopp.Repositories
+namespace BarberShopp.Repositories
 {
     public class UserRepository:GenericRepository<UserEntity>,IUserRepository
     {

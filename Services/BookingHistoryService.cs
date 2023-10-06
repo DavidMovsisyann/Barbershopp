@@ -1,8 +1,8 @@
-﻿using Barbershopp.Entities;
-using Barbershopp.Repository_Interfaces;
-using Barbershopp.Service_Interfaces;
+﻿using BarberShopp.Entities;
+using BarberShopp.Repository_Interfaces;
+using BarberShopp.Service_Interfaces;
 
-namespace Barbershopp.Services
+namespace BarberShopp.Services
 {
     public class BookingHistoryService : IBookingHistoryService
     {

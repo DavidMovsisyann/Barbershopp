@@ -1,8 +1,8 @@
-﻿using Barbershopp.Reference_Interfaces;
+﻿using BarberShopp.Reference_Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 
-namespace Barbershopp.Repositories
+namespace BarberShopp.Repositories
 {
     public class GenericRepository<T> : IGenericRepository<T> where T : class
     {

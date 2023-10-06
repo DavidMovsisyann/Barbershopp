@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Storage;
 
-namespace Barbershopp.Repository_Interfaces
+namespace BarberShopp.Repository_Interfaces
 {
     public interface IUnitOfWork
     {

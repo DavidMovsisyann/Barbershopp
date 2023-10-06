@@ -1,0 +1,70 @@
+﻿@model BarberShopp.Entities.UserEntity
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+    }
+
+    .container {
+        width: 300px;
+        padding: 20px;
+        margin: 0 auto;
+        background-color: #ffffff;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin-top: 10%;
+    }
+
+        .container h2 {
+            text-align: center;
+        }
+
+        .container input[type="text"],
+        .container input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        .container input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            background-color: #4CAF50;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+
+            .container input[type="submit"]:hover {
+                background-color: #45a049;
+            }
+
+    ul {
+        list-style: none;
+        display: flex;
+    }
+    i{
+    font-size:30px;
+    margin-left:50px;
+    }
+</style>
+
+<div class="container">
+    <h2>Login</h2>
+    <form asp-action="Login">
+        <input asp-for="UserName" type="text" placeholder="Username" />
+        <input asp-for="Password" type="password" placeholder="Password" />
+        <input type="submit" value="Login" />
+    </form>
+    <div class="icons">
+        <ul class="menu-ul">
+            <li><i class="fa-brands fa-facebook"></i></li>
+            <li><i class="fa-brands fa-google" aria-hidden="true"></i></li>
+        </ul>
+    </div>
+    <a href=@Url.Action("SignUp","Pages")>Create a new account</a>
+</div>

@@ -1,28 +1,38 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using BarberShopp.DataBase;
+using BarberShopp.Entities;
+using BarberShopp.Service_Interfaces;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using Barbershopp.DataBase;
-using Barbershopp.Entities;
 
 namespace Barbershopp.Controllers
 {
     public class UsersController : Controller
     {
+        private readonly IUserService _service;
         private readonly DataBaseContext _context;
 
-        public UsersController(DataBaseContext context)
+        public UsersController(IUserService service,DataBaseContext context)
         {
+            _service = service; 
             _context = context;
         }
-
+        public async Task<IActionResult> Login([Bind("UserName,Password")] UserEntity userEntity) {
+            if (_service.CheckUser(userEntity.UserName,userEntity.Password))
+            {
+                return RedirectToAction("Home", "Pages");
+                
+            }
+            return Ok();
+        }
+        [HttpGet]
+        public async Task<IActionResult> LoginView()
+        { 
+            return View("Views/Users/Login.cshtml");
+        }
         // GET: Users
         public async Task<IActionResult> Index()
         {
-              return View(await _context.Users.ToListAsync());
+            return View(await _context.Users.ToListAsync());
         }
 
         // GET: Users/Details/5
@@ -48,8 +58,7 @@ namespace Barbershopp.Controllers
         {
             return View();
         }
-
-        // POST: Users/Create
+         // POST: Users/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -58,13 +67,12 @@ namespace Barbershopp.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Add(userEntity);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+               await _service.AddUser(userEntity);
+               return RedirectToAction("Home","Pages");
             }
             return View(userEntity);
         }
-
+         
         // GET: Users/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -97,8 +105,7 @@ namespace Barbershopp.Controllers
             {
                 try
                 {
-                    _context.Update(userEntity);
-                    await _context.SaveChangesAsync();
+                    _service.UpdateUser(userEntity);
                 }
                 catch (DbUpdateConcurrencyException)
                 {
@@ -146,16 +153,17 @@ namespace Barbershopp.Controllers
             var userEntity = await _context.Users.FindAsync(id);
             if (userEntity != null)
             {
-                _context.Users.Remove(userEntity);
+                await _service.DeleteUser(userEntity);
             }
-            
-            await _context.SaveChangesAsync();
+
+
             return RedirectToAction(nameof(Index));
         }
 
         private bool UserEntityExists(int? id)
         {
-          return _context.Users.Any(e => e.Id == id);
+            return _context.Users.Any(e => e.Id == id);
         }
+        
     }
 }

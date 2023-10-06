@@ -1,8 +1,8 @@
-﻿using Barbershopp.Entities;
-using Barbershopp.Repository_Interfaces;
-using Barbershopp.Service_Interfaces;
+﻿using BarberShopp.Entities;
+using BarberShopp.Repository_Interfaces;
+using BarberShopp.Service_Interfaces;
 
-namespace Barbershopp.Services
+namespace BarberShopp.Services
 {
     public class UserService : IUserService
     {
@@ -29,7 +29,15 @@ namespace Barbershopp.Services
             var user = await _unitOfWork.User.Get(x => x.Id == id);
             return user;
         }
-
+        public bool CheckUser(string name, string pass)
+        {
+            var user = _unitOfWork.User.Get(x => x.UserName == name && x.Password == pass);
+            if (user!=null)
+            {
+                return true;
+            }
+            return false;
+        }
         public async Task<IEnumerable<UserEntity>> GetUsers()
         {
             var users = await _unitOfWork.User.GetAll(x => x.Id > 0, 0, null);

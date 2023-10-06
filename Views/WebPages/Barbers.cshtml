@@ -1,0 +1,834 @@
+﻿@model Barbershopp.Models.HomePageModels
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+    <style>
+        * {
+            margin: 0;
+        }
+
+        body {
+            background-color: black;
+        }
+
+        ul {
+            list-style: none;
+            display: flex;
+        }
+
+        li {
+            margin: 10px;
+            font-family: sans-serif;
+            font-weight: 100;
+            color: white;
+            font-size: 18px;
+        }
+
+
+        .menu {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            background-color: black;
+            height: 7vh;
+        }
+
+        ul:hover {
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            background-color: #3d3a4e;
+        }
+
+        .white-kub {
+            width: 900px;
+            height: 100px;
+            background-color: white;
+        }
+
+        .kub {
+            background-image: url("https://cutewallpaper.org/21/barber-shop-wallpaper-hd/freedombarbersfbanner1-Freedom-Barber-SF.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            height: 100vh;
+            background-attachment: fixed;
+            opacity: 0.8;
+        }
+
+        .p-div {
+            display: flex;
+            margin-left: 70px;
+        }
+
+        .p-1 {
+            margin: 4px;
+            margin-top: 40px;
+            font-family: sans-serif;
+            font-weight: 100;
+            margin-left: 20px;
+            font-size: large;
+        }
+
+
+        .button {
+            --color: rgb(249, 180, 4);
+            padding: 0.8em 1.7em;
+            background-color: transparent;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transition: .5s;
+            font-weight: 400;
+            font-size: 17px;
+            border: 1px solid;
+            font-family: inherit;
+            text-transform: uppercase;
+            color: var(--color);
+            z-index: 1;
+            margin-top: 25px;
+            margin-left: 50px;
+            font-family: sans-serif;
+            font-weight: 100;
+        }
+
+        .munu-div li {
+            color: white;
+        }
+
+        .button::before,
+        .button::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 50px;
+            transform: translate(-50%, -50%);
+            position: absolute;
+            border-radius: 50%;
+            z-index: -1;
+            background-color: var(--color);
+            transition: 1s ease;
+        }
+
+        .button::before {
+            top: -1em;
+            left: -1em;
+        }
+
+        .button::after {
+            left: calc(100% + 1em);
+            top: calc(100% + 1em);
+        }
+
+        .button:hover::before,
+        .button:hover::after {
+            height: 410px;
+            width: 410px;
+        }
+
+        .button:hover {
+            color: white;
+        }
+
+        .button:active {
+            filter: brightness(.8);
+        }
+
+
+        .white-kub {
+            display: flex;
+        }
+
+        .p-1:hover {
+            color: rgb(249, 180, 4);
+            cursor: pointer;
+        }
+
+        .w-1 {
+            display: flex;
+            justify-content: center;
+        }
+
+        span {
+            color: rgb(249, 180, 4);
+            font-weight: normal;
+        }
+
+        .p-2 {
+            color: white;
+            text-align: center;
+            font-family: sans-serif;
+            font-weight: 100;
+            font-size: 50px;
+            margin-top: 20%;
+        }
+
+        .p-4 {
+            color: white;
+            text-align: center;
+            font-family: sans-serif;
+            font-weight: 100;
+            font-size: 25px;
+            margin-top: 20px;
+        }
+
+        .loc {
+            margin: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        input {
+            border: 1px solid #ccc;
+            width: 18%;
+            height: 4vh;
+            margin: 10px;
+        }
+
+        .s-1 {
+            font-weight: 100;
+            font-family: sans-serif;
+        }
+
+
+
+
+        .button-1 {
+            padding: 17px 40px;
+            border: 0;
+            background-color: black;
+            box-shadow: white;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-size: 15px;
+            transition: all .5s ease;
+            color: white;
+            width: 20%;
+        }
+
+            .button-1:hover {
+                letter-spacing: 3px;
+                background-color: rgb(249, 180, 4);
+                ;
+                color: hsl(0, 0%, 100%);
+                box-shadow: rgb(249, 180, 4);
+                ;
+            }
+
+            .button-1:active {
+                letter-spacing: 3px;
+                background-color: rgb(249, 180, 4);
+                ;
+                color: hsl(0, 0%, 100%);
+                box-shadow: rgb(249, 180, 4);
+                ;
+                transform: translateY(10px);
+                transition: 100ms;
+            }
+
+        .employee-info {
+            background-image: url("https://st.biglion.ru/cfs15/deal_offer/f0/60/f060a79379d63ec8bb4a0b8e0896c440.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            height: 50vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0.7;
+        }
+
+
+        .employee-text {
+            color: white;
+            font-family: sans-serif;
+            font-weight: 100;
+            display: flex;
+            font-size: 20px;
+            width: 1000px;
+            font-style: italic;
+        }
+
+
+        .text-t {
+            color: white;
+            font-family: sans-serif;
+            font-weight: 100;
+            font-size: 20px;
+            margin-left: 10px;
+            margin-top: 20px;
+            font-style: italic;
+        }
+
+
+        .img-i {
+            display: flex;
+            justify-content: center;
+        }
+
+        .txt {
+            color: white;
+            font-family: sans-serif;
+            font-weight: 100;
+            font-size: 20px;
+            margin: 20px;
+        }
+
+        .txt-two {
+            color: white;
+            font-family: sans-serif;
+            font-weight: 100;
+            font-size: 25px;
+            margin: 20px;
+        }
+
+        .text-two {
+            height: 40.5vh;
+        }
+
+        .img-2 {
+            width: 25%;
+            margin-left: 100px;
+            border-radius: 1000px;
+        }
+
+        .logo {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .p-div {
+            display: flex;
+            justify-content: center;
+        }
+
+        .pp {
+            color: white;
+            font-size: 40px;
+            font-family: sans-serif;
+            font-weight: 100;
+            margin-top: 28px;
+        }
+
+        .li-first {
+            color: black;
+        }
+
+
+
+        table {
+            width: 90%;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+            table tbody tr th,
+            td {
+                padding: 10px;
+                border: 1px solid white;
+            }
+
+        th {
+            font-family: sans-serif;
+            color: white;
+            font-size: 20px;
+            font-weight: 100;
+        }
+
+
+        .table-div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+        }
+
+
+        .long-div {
+            background-image: url("https://nationalbarbers.org/wp-content/uploads/2020/07/Untitled-design-3-768x432.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            background-attachment: fixed;
+            opacity: 0.8;
+        }
+
+        .people-img {
+            width: 30%;
+            margin-left: 40%;
+            border-radius: 50%;
+        }
+
+        /* -------------------------------------------------------------- */
+
+        .wrapper {
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+        }
+
+        .card {
+            position: relative;
+            width: 150px;
+            height: 100px;
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+
+            .card:hover {
+                transform: scale(1.05);
+            }
+
+        .input {
+            position: relative;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            cursor: pointer;
+            appearance: none;
+            border: 1px solid #e5e5e5;
+            border-radius: 10px;
+            z-index: 10;
+            box-shadow: 1px 1px 10px #aaaaaa, -1px -1px 10px #ffffff;
+        }
+
+            .input + .check::before {
+                content: "";
+                position: absolute;
+                top: 15px;
+                right: 15px;
+                width: 16px;
+                height: 16px;
+                border: 2px solid #d0d0d0;
+                border-radius: 50%;
+                background-color: #E8E8E8;
+            }
+
+            .input:checked + .check::after {
+                content: '';
+                position: absolute;
+                top: 19px;
+                right: 19px;
+                width: 12px;
+                height: 12px;
+                background-color: rgba(255, 0, 0, 0.7);
+                border-radius: 50%;
+            }
+
+            .input[value="standart"]:checked + .check::after {
+                background-color: rgba(255, 165, 0, 0.7);
+            }
+
+            .input[value="premium"]:checked + .check::after {
+                background-color: rgba(0, 128, 0, 0.7);
+            }
+
+            .input[value="basic"]:checked {
+                border: 1.5px solid rgba(255, 0, 0, 0.7);
+            }
+
+            .input[value="standart"]:checked {
+                border: 1.5px solid rgba(255, 165, 0, 0.7);
+            }
+
+            .input[value="premium"]:checked {
+                border: 1.5px solid rgba(149, 77, 0, 0.7);
+            }
+
+        .label {
+            color: white;
+            position: absolute;
+            font-family: sans-serif;
+            font-weight: 100;
+            font-style: italic;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+
+            .label .title {
+                margin: 15px 0 0 15px;
+                font-weight: 900;
+                font-size: 15px;
+                letter-spacing: 1.5px;
+            }
+
+            .label .price {
+                margin: 20px 0 0 15px;
+                font-size: 20px;
+                font-weight: 900;
+            }
+
+            .label .span {
+                color: white;
+                font-weight: 700;
+                font-size: 15px;
+            }
+
+
+
+
+        /* ----------------------------------- */
+
+
+        .button1 {
+            position: relative;
+            overflow: hidden;
+            height: 3rem;
+            padding: 0 3rem;
+            background: #3d3a4e;
+            background-size: 400%;
+            color: white;
+            border: none;
+        }
+
+            .button1:hover::before {
+                transform: scaleX(1);
+            }
+
+        .button-content1 {
+            position: relative;
+            z-index: 1;
+        }
+
+        .button1::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: scaleX(0);
+            transform-origin: 0 50%;
+            width: 100%;
+            height: inherit;
+            border-radius: inherit;
+            background: linear-gradient(82.3deg, rgb(246, 156, 12) 10.8%, rgba(99, 88, 238, 1) 94.3%);
+            transition: all 0.475s;
+        }
+
+        .ss {
+            color: white;
+        }
+
+        /* ----------------------------------- */
+
+
+        .button2 {
+            position: relative;
+            overflow: hidden;
+            height: 3rem;
+            padding: 0 3rem;
+            background: #3d3a4e;
+            background-size: 400%;
+            color: white;
+            border: none;
+        }
+
+            .button2:hover::before {
+                transform: scaleX(1);
+            }
+
+        .button-content2 {
+            position: relative;
+            z-index: 1;
+        }
+
+        .button2::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: scaleX(0);
+            transform-origin: 0 50%;
+            width: 100%;
+            height: inherit;
+            border-radius: inherit;
+            background: linear-gradient(82.3deg, rgb(246, 156, 12) 10.8%, rgb(17, 230, 187) 94.3%);
+            transition: all 0.475s;
+        }
+
+        .ss {
+            color: white;
+        }
+
+        .reglog {
+            margin: 0;
+            text-decoration: none;
+            color: rgb(249, 180, 4);
+            padding: 0;
+        }
+
+        .reglogg {
+            margin: 0;
+            text-decoration: none;
+            color: rgb(249, 180, 4);
+            padding: 0;
+            margin-right: 5%;
+        }
+
+        .white-kub {
+            width: 30%;
+            height: 100px;
+            background-color: rgba(255, 255, 255, 0);
+            justify-content: center;
+        }
+
+        .maintext {
+            color: rgb(249, 180, 4);
+        }
+
+        .barber-selection {
+            width: 40%;
+            height: 50px;
+        }
+
+        .datepicker {
+            width: 40%;
+            height: 47px;
+        }
+
+        .submit-btn {
+            width: 30%;
+            height: 47px;
+            margin-left: 25%;
+        }
+
+        .booking-div {
+            margin-left: 20%;
+        }
+
+        .booking-ttl {
+            margin-left: 35%;
+            color: white;
+        }
+
+        select {
+            background-color: rgba(255, 255, 255, 0.612);
+        }
+
+        input {
+            background-color: rgba(255, 255, 255, 0.612);
+        }
+
+        .Master {
+            color: white;
+            display: flex;
+            justify-content: center;
+        }
+
+        .Masters {
+            background-image: url("https://png.pngtree.com/background/20210711/original/pngtree-dark-wood-grain-background-material-picture-image_1135073.jpg");
+            background-repeat: repeat;
+        }
+
+        .Master-info {
+            width: 75%;
+        }
+
+        .Master-name {
+            margin-bottom: 7%;
+            margin-left: 20px;
+        }
+
+        .Master-text {
+            font-size: 20px;
+            margin-left: 20px;
+        }
+
+        .Master-img {
+            width: 25%;
+        }
+
+        .maintext {
+            color: rgb(249, 180, 4);
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .allert {
+            margin-left: 40px;
+            color: red;
+        }
+
+    </style>
+</head>
+
+<body >
+    <div class="big-div">
+        <div class="menu">
+            <div class="munu-div">
+                <ul>
+                    <li><i class="fa fa-home" aria-hidden="true"></i></li>
+                    <li>121, King St, VIC 3000, New York.</li>
+                    <li><i class="fa fa-envelope-o" aria-hidden="true"></i> info@example.xcom</li>
+                </ul>
+            </div>
+            <div class="munu-div1">
+                <ul class="menu-ul">
+                    <li><i class="fa fa-instagram" aria-hidden="true"></i></li>
+                    <li><i class="fa fa-twitter" aria-hidden="true"></i></li>
+                    <li><i class="fa fa-google-plus" aria-hidden="true"></i></li>
+                    <li><i class="fa fa-github" aria-hidden="true"></i></li>
+                    <li><i class="fa fa-pinterest" aria-hidden="true"></i></li>
+                </ul>
+            </div>
+            <a href=@Url.Action("Login","Pages") class="reglog">SIGN IN</a>
+            <a href=@Url.Action("SignUp","Pages") class="reglogg">SIGN UP</a>
+            
+        </div>
+
+        <div class="kub">
+            <div class="w-1">
+                <div class="white-kub">
+                    <div class="p-div">
+                        <a class="p-1 " href="@Url.Action("Home", "Pages")">Home</a>
+                        <a class="p-1" href="@Url.Action("AboutUs", "Pages")">About</a>
+                        <a class="p-1 maintext" href="@Url.Action("Barbers", "Pages")" maintext">Barbers</a>
+                    </div>
+                </div>
+            </div>
+            <div class="text">
+                <p class="p-2">Discover a <span> Property</span>You'll love to live.</p>
+                <p class="p-4">The best place to find your property</p>
+            </div>
+        </div>
+        <div class="employee-info">
+            <div class="people">
+                <img src="https://img.freepik.com/premium-vector/barbershop-logo-design-illustration_304830-101.jpg"
+                     class="people-img">
+            </div>
+            <div class="text-2">
+                <p class="employee-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore libero dicta officiis
+                    aliquid dolores amet sint quae ipsam ex architecto accusantium vitae, illo beatae nam esse eligendi quibusdam.
+                    Inventore, at? Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam amet necessitatibus accusantium,
+                    harum perspiciatis commodi cum hic iste, sit maxime incidunt? Dicta quis modi perspiciatis dolorem reiciendis
+                    necessitatibus corporis quidem. Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe ipsa maiores
+                    reprehenderit! Libero eligendi doloremque assumenda ipsam, ipsum, illum, vel possimus voluptatum voluptates
+                    illo ducimus quia itaque et magni eum.
+                </p>
+            </div>
+        </div>
+
+        <div class="Masters">
+            @{
+                foreach (var item in Model.Employees)
+                {
+
+                    <div class="Master">
+                        <div class="Master-img">
+                            <img src=@item.Image
+                                 class="img-ph">
+                        </div>
+                        <div class="Master-info">
+                            <h2 class="Master-name">@item.Name</h2>
+                            <p class="Master-text">@item.Info</p>
+                        </div>
+                    </div>
+                }
+            }
+        </div>
+
+    </div>
+    <div class="long-div">
+        <div class="p-div">
+            <p class="pp">Our Services</p>
+        </div>
+
+
+        <div class="table-div">
+            <table>
+                <tbody>
+                    @{
+                        foreach (var serv in Model.Services)
+                        {
+                            <tr>
+                                <th> @serv.Name</th>
+                                <th>@serv.Price $</th>
+                            </tr>
+
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+
+        <div class="booking-div">
+            <h1 class="booking-ttl">Book</h1>
+            <div class="booking-items">
+                <form asp-action="Book">
+                    <select oninput="getDates()" id="selector" asp-for="Booking.EmployeeName" class="barber-selection">
+                        @{
+                            foreach (var opt in Model.Employees)
+                            {
+                                <option>@opt.Name</option>
+                            }
+                        }
+                    </select>
+                    <input asp-for="Booking.BookedDate" oninput="DateCheck()" id="picker" class="datepicker" />
+                    <input type="submit" class="submit-btn">
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script>
+        const selector = document.getElementById("picker");
+        var dates = [];
+        config = {
+            enableTime: true,
+            time_24hr: true,
+            dateFormat: "Y-m-d H:i"
+        }
+        flatpickr("input[type=datetime-local]", config);
+        function getDates() {
+            $.ajax({
+                type: "GET",
+                url: 'https://localhost:7140/Pages/GetBusyDates',
+                data: { employeeName: selector.value },
+                contentType: "application/json; charset=utf-8",
+                success: function (response) {
+                    dates = response;
+                    console.log(dates);
+                }
+            })
+        }
+        function DateCheck() {
+            var isBusy = false;
+            const picker = document.getElementById("picker");
+            let pickervalue = new Date(picker.value);
+           
+
+            for (var i = 0; i < dates.length; i++) {
+                var dateValue = new Date(dates[i]);
+
+                if (dateValue.getDate() == pickervalue.getDate() && dateValue.getTime() == pickervalue.getTime()) {
+                    isBusy = true;
+                }
+
+                if (isBusy) {
+                    picker.style.backgroundColor = "red";
+                }
+                else {
+                    picker.style.backgroundColor = "rgba(255, 255, 255, 0.612)";
+                }
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,6 +1,6 @@
-﻿using Barbershopp.Entities;
+﻿using BarberShopp.Entities;
 
-namespace Barbershopp.Service_Interfaces
+namespace BarberShopp.Service_Interfaces
 {
     public interface IEmployeeService
     {
@@ -9,5 +9,6 @@ namespace Barbershopp.Service_Interfaces
         Task DeleteEmployee(EmployeeEntity employee);
         Task<EmployeeEntity> GetEmployeeById(int id);
         Task<IEnumerable<EmployeeEntity>> GetEmployees();
+        Task<EmployeeEntity> GetEmployeeByName(string name);
     }
 }

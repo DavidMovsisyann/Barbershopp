@@ -1,6 +1,6 @@
 ﻿using System.Linq.Expressions;
 
-namespace Barbershopp.Reference_Interfaces
+namespace BarberShopp.Reference_Interfaces
 {
     public interface IGenericRepository<T>
     {

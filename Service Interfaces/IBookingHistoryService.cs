@@ -1,6 +1,6 @@
-﻿using Barbershopp.Entities;
+﻿using BarberShopp.Entities;
 
-namespace Barbershopp.Service_Interfaces
+namespace BarberShopp.Service_Interfaces
 {
     public interface IBookingHistoryService
     {

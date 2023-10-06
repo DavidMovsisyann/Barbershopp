@@ -1,10 +1,11 @@
 ﻿using Barbershopp.Entities;
-using Barbershopp.Repository_Interfaces;
-using Barbershopp.Service_Interfaces;
+using BarberShopp.Entities;
+using BarberShopp.Repository_Interfaces;
+using BarberShopp.Service_Interfaces;
 
-namespace Barbershopp.Services
+namespace BarberShopp.Services
 {
-    public class ServiceService : IServiceService
+    public class ServiceService : IBarberServicesService
     {
         private readonly IUnitOfWork _unitOfWork;
 
@@ -12,31 +13,31 @@ namespace Barbershopp.Services
         {
             _unitOfWork = unitOfWork;
         }
-        public async Task AddService(ServiceEntity service)
+        public async Task AddService(BarberServicesEntity service)
         {
              _unitOfWork.Service.Insert(service);
             await _unitOfWork.Service.Update(service);
         }
 
-        public async Task DeleteService(ServiceEntity service)
+        public async Task DeleteService(BarberServicesEntity service)
         {
             await _unitOfWork.Service.Delete(service);
             await _unitOfWork.CompleteAsync();
         }
 
-        public async Task<ServiceEntity> GetServiceById(int id)
+        public async Task<BarberServicesEntity> GetServiceById(int id)
         {
             var service = await _unitOfWork.Service.Get(x=>x.Id == id); 
             return service;
         }
 
-        public async Task<IEnumerable<ServiceEntity>> GetServices()
+        public async Task<IEnumerable<BarberServicesEntity>> GetServices()
         {
             var services = await _unitOfWork.Service.GetAll(x=>x.Id>0,0,null);
             return services;
         }
 
-        public async Task UpdateService(ServiceEntity service)
+        public async Task UpdateService(BarberServicesEntity service)
         {
             await _unitOfWork.Service.Update(service);
             await _unitOfWork.CompleteAsync();

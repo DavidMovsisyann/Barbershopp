@@ -1,9 +1,9 @@
-﻿using Barbershopp.DataBase;
-using Barbershopp.Repository_Interfaces;
+﻿using BarberShopp.DataBase;
+using BarberShopp.Repository_Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
 
-namespace Barbershopp.Repositories
+namespace BarberShopp.Repositories
 {
     public class UnitOfWork : IUnitOfWork
     {

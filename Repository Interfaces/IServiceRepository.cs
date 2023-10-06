@@ -1,9 +1,10 @@
 ﻿using Barbershopp.Entities;
-using Barbershopp.Reference_Interfaces;
+using BarberShopp.Entities;
+using BarberShopp.Reference_Interfaces;
 
-namespace Barbershopp.Repository_Interfaces
+namespace BarberShopp.Repository_Interfaces
 {
-    public interface IServiceRepository : IGenericRepository<ServiceEntity>
+    public interface IServiceRepository : IGenericRepository<BarberServicesEntity>
     {
     }
 }

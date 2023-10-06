@@ -1,8 +1,8 @@
-﻿using Barbershopp.Entities;
-using Barbershopp.Repository_Interfaces;
-using Barbershopp.Service_Interfaces;
+﻿using BarberShopp.Entities;
+using BarberShopp.Repository_Interfaces;
+using BarberShopp.Service_Interfaces;
 
-namespace Barbershopp.Services
+namespace BarberShopp.Services
 {
     public class EmployeeService : IEmployeeService
     {
@@ -26,6 +26,12 @@ namespace Barbershopp.Services
         public async Task<EmployeeEntity> GetEmployeeById(int id)
         {
             var employee = await _unitOfWork.Employee.Get(x => x.Id == id);
+            return employee;
+        }
+
+        public async Task<EmployeeEntity> GetEmployeeByName(string name)
+        {
+            var employee = await _unitOfWork.Employee.Get(x => x.Name == name);
             return employee;
         }
 
