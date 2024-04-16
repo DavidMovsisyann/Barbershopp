@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
-
+    @{
+        Layout = "~/Views/WebPages/_Layout.cshtml";
+    }
     <style>
         * {
             margin: 0;
@@ -36,6 +38,12 @@
             width: 100%;
             background-color: black;
             height: 7vh;
+       
+        }
+        .menu a{
+            color:white;
+            text-decoration:none;
+            margin-right:7%;
         }
 
         ul:hover {
@@ -652,7 +660,7 @@
             color: rgb(249, 180, 4);
         }
 
-        a {
+       .kub a {
             text-decoration: none;
             color: black;
         }
@@ -667,6 +675,7 @@
 
 <body >
     <div class="big-div">
+        @section header{
         <div class="menu">
             <div class="munu-div">
                 <ul>
@@ -684,11 +693,10 @@
                     <li><i class="fa fa-pinterest" aria-hidden="true"></i></li>
                 </ul>
             </div>
-            <a href=@Url.Action("Login","Pages") class="reglog">SIGN IN</a>
-            <a href=@Url.Action("SignUp","Pages") class="reglogg">SIGN UP</a>
+                    
             
         </div>
-
+        }
         <div class="kub">
             <div class="w-1">
                 <div class="white-kub">
@@ -788,14 +796,16 @@
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script>
-        const selector = document.getElementById("picker");
+
+        const picker = document.getElementById("picker");
         var dates = [];
         config = {
             enableTime: true,
             time_24hr: true,
-            dateFormat: "Y-m-d H:i"
+            dateFormat: "Y-m-d H:i",
+            disable: dates
         }
-        flatpickr("input[type=datetime-local]", config);
+        flatpickr(picker,config);
         function getDates() {
             $.ajax({
                 type: "GET",

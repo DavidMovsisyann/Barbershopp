@@ -5,8 +5,9 @@ using BarberShopp.Repositories;
 using Microsoft.EntityFrameworkCore;
 using BarberShopp.DataBase;
 using Microsoft.AspNetCore.Identity;
-using Barbershopp.Data;
-using Barbershopp.Areas.Identity.Data;
+
+//using Barbershopp.Data;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,12 +20,16 @@ builder.Services.AddDbContext<DataBaseContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DataBase"));
 });
 
+//builder.Services.AddDefaultIdentity<BarbershoppUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<IdentityBarbershoppContext>();
 
-builder.Services.AddDefaultIdentity<BarbershoppUser>(options => options.SignIn.RequireConfirmedAccount = true).AddEntityFrameworkStores<BarbershoppContext>();
-builder.Services.AddDbContext<BarbershoppContext>(options =>
-{
-    options.UseSqlServer(builder.Configuration.GetConnectionString("BarbershoppIdentityContextConnection"));
-});
+
+
+
+
+//builder.Services.AddDbContext<IdentityBarbershoppContext>(options =>
+//{
+//    options.UseSqlServer(builder.Configuration.GetConnectionString("BarbershoppIdentityContextConnection"));
+//});
 
 
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();

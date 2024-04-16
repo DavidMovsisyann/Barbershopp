@@ -1,5 +1,6 @@
 ﻿@{
-    ViewData["Title"] = "AboutUs";
+    ViewData["Title"] = "AboutUs";   
+    Layout = "~/Views/WebPages/_Layout.cshtml";
 }
 <style>
     .title {
@@ -169,6 +170,7 @@
 </style>
 
 <div class="main">
+    @section header{
     <div class="menu">
         <div class="munu-div">
             <ul>
@@ -187,7 +189,7 @@
             </ul>
         </div>
     </div>
-
+    }
     <div class="kub">
         <div class="w-1">
             <div class="white-kub">

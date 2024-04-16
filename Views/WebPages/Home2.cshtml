@@ -1,6 +1,9 @@
 ﻿
 <html lang="en">
 <head>
+    @{
+        Layout = "~/Views/WebPages/_Layout.cshtml";
+    }
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -51,7 +54,7 @@
         }
 
         .kub {
-            background-image: url("https://images.fresha.com/locations/location-profile-images/828985/982922/9cf485ce-2d88-4771-aca9-1e3e19fb5e42.jpg?class=gallery-modal-large");
+            background-image: url("https://images.unsplash.com/photo-1585747860715-2ba37e788b70?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8YmFyYmVyc2hvcHxlbnwwfHwwfHx8MA%3D%3D");
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
@@ -826,11 +829,13 @@
 </head>
 <body>
     <div class="big">
+        @section header{
         <div class="menu">
             <div class="munu-div">
                 <ul>
                     <li><i class="fa fa-home" aria-hidden="true"></i></li>
-                    <li>121, King St, VIC 3000, New York.
+                    <li>
+                        121, King St, VIC 3000, New York.
 
                     </li>
                     <li><i class="fa fa-envelope-o" aria-hidden="true"></i> info@example.xcom</li>
@@ -846,7 +851,7 @@
                 </ul>
             </div>
         </div>
-
+        }
         <div class="kub">
             <div class="w-1">
                 <div class="white-kub">
